@@ -14,6 +14,13 @@ public class Greeting {
     
     private String greeting;
     
+    public Greeting() {
+    }
+
+    public Greeting(String greeting) {
+        this.greeting = greeting;
+    }
+
     public Integer getId() {
         return id;
     }

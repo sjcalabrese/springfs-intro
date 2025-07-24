@@ -1,13 +1,22 @@
 package guru.springframework.springfsintro.model;
 
-/**
- * Data Transfer Object for Greeting entity
- */
 public class GreetingDto {
 
     private Integer id;
     private String greeting;
     
+    public GreetingDto() {
+    }
+
+    public GreetingDto(String greeting) {
+        this.greeting = greeting;
+    }
+
+    public GreetingDto(Integer id, String greeting) {
+        this.id = id;
+        this.greeting = greeting;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -24,20 +24,10 @@ public class GreetingServiceImpl implements GreetingService {
         List<Greeting> greetings = greetingRepository.findAll();
         
         if (greetings.isEmpty()) {
-            // Return a new GreetingDto with "not found" message if no records exist
-            GreetingDto notFoundDto = new GreetingDto();
-            notFoundDto.setGreeting("not found");
-            return notFoundDto;
+            return new GreetingDto("not found");
         }
         
-        // Get the first greeting from the list
         Greeting greeting = greetings.getFirst();
-        
-        // Convert entity to DTO
-        GreetingDto greetingDto = new GreetingDto();
-        greetingDto.setId(greeting.getId());
-        greetingDto.setGreeting(greeting.getGreeting());
-        
-        return greetingDto;
+        return new GreetingDto(greeting.getId(), greeting.getGreeting());
     }
 }
